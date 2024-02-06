@@ -1,0 +1,15 @@
+<h1>Tacos!!!</h1>
+
+<p>tonight we have an assortment</p>
+
+<% fillings = ["Carnitas", "Veggie", "Beef", "Mushroom", "Avocado"] %>
+
+<p>We have <%=fillings.count%> tacos </p>
+
+<ul>
+  <% for filling in fillings%>
+    <li><%=filling%></li>
+  <%end%>
+</ul>
+
+<!---html comment--->
