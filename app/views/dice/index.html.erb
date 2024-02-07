@@ -1,7 +1,12 @@
 <h1>Dice</h1>
 
-<% die1 =rand(1..6)%>
-<% die2 =rand(1..6)%>
+<% outcomes = (1..6).to_a.shuffle %>
+<% die1 = outcomes.pop %>
+<% die2 = outcomes.pop %>
+<% die3 = outcomes.pop %>
+<% die4 = outcomes.pop %>
+
+
 
 <p>
   <img src="/images/dice/<%= die1%>.svg">
@@ -9,8 +14,16 @@
   </p>
   <%= die1%>
   <%= die2%>
-<p> The total is <%= die1 + die2%> </p>
-</p>
+  <%= die3%>
+  <%= die4%>
+ 
+<p> The total is <%= die1 + die2 + die3 + die4%> </p>
 
+
+<% for game in 1..8 %>
+  <% die = rand(1..6) %>
+ <p> <%= "Here are the numbers for Game #{game}: #{die}" %> </p>
+<% end %>
+  
 <p>
 <a href="/dice">Roll again</p>
